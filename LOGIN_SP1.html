@@ -1,0 +1,32 @@
+<?php
+
+$user = (isset($_REQUEST['user'])?$_REQUEST['user']:"");
+$clave = (isset($_REQUEST['clave'])?$_REQUEST['clave']:"");
+
+?>
+
+<html>
+<head><title></title>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSSLog_SP1.css">
+  </head>
+  <body>
+
+    <div class="login-box">
+      <h1>Login Here</h1>
+      <form action="guardar_info.php" method="POST" class="form-register">
+        <label for="username">Usuario</label>
+        <input type="text" name="user" placeholder="Usuario">
+        <label for="password">Password</label>
+        <input type="password" name="clave" placeholder="Password">
+        <input type="submit" value="Log In">
+        <p class="message">¿No estás registrado? <a href="form.html">Crea una cuenta</a></p>
+      </form>
+    </div>
+  </body>
+</html>

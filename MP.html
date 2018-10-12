@@ -1,0 +1,84 @@
+<! doctype html>
+<html lang="es">
+<html>
+<head>
+<meta charset="UTF8">
+<meta name="viewport" content="width=device-width">
+<title>Menú de sistema de herramientas</title>
+
+<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.css" type="text/css">
+
+<script src="plugins/bootstrap/js/jquery-3.1.1.min.js"></script>
+
+<script src="plugins/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<a href="#" class="navbar-brand">Sección principal</a>
+<button aria-expanded="false" class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+</div>
+
+<div class="navbar-collapse collapse" id="navbar-main">
+<ul class="nav navbar-nav">
+<li>
+<a href="#">Otra sección</a>
+</li>
+<!--primer menú desplegable-->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown"
+href="#" id="themes">SECCIÓN DE HERRAMIENTAS<span class="caret"></span></a>
+
+<ul class="dropdown-menu" aria-labelledby="themes">
+<li><a href="#">TIPOS DE HERRAMIENTAS</a></li>
+<li><a href="#">SOLICITAR PRÉSTAMO</a></li>
+</ul>
+</li>
+<!--Segundo menú desplegable-->
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown"
+href="#" id="themes">CONÓCENOS<span class="caret"></span></a>
+
+<ul class="dropdown-menu" aria-labelledby="themes">
+<li><a href="#">NUESTRA VISIÓN</a></li>
+<li><a href="#">NUESTRA MISIÓN</a></li>
+<li><a href="#">UN POCO DE NUESTRA HISTORIA</a></li>
+</ul>
+</li>
+
+<!--Tercer menú desplegable-->
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown"
+href="#" id="themes">MÁS<span class="caret"></span></a>
+
+<ul class="dropdown-menu" aria-labelledby="themes">
+<li><a href="LOGIN_SP1.php">SALIR DEL SISTEMA</a></li>
+</ul>
+</li>
+
+</ul>
+</div>
+</div>
+</nav>
+</body>
+</html>
+
+<?php
+session_start();
+if(isset($_SESSION['txtNombre'])){
+print "<script>alert('BIENVENIDO AL MENÚ PRINCIPAL');</script>";
+print "Bienvenido Mr " . $_SESSION["txtNombre"];
+print "<a href='encriptado.php?cerrar=true'> Cerrar Sesión </a>";
+}else{
+header("Location:LOGIN_SP1.php");
+}
+
+?>
